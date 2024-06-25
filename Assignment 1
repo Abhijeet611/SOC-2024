@@ -1,0 +1,22 @@
+## Assignemnt 1 
+question:Make a python file, name it ass1.py. This file should have a definition of a class named MathTools with a member variable total_calls and two functions derivative and gradient.
+- total_calls: records the total number of times either of the functions were called.
+- derivative: takes a function and a number as its arguments (interestingly one function can accept another function as its parameter) and returns the approximate value of the derivative of the function at that number.
+- gradient: similar to above, but this time it takes a function and a list of numbers (a point in space) as its arguments and returns the approximate gradient of the function at that point as a list.
+
+
+## Solution
+
+from ass1 import MathTools
+
+def testForDerivative(x):
+    return x**2+2*x+3
+
+def testForGradient(W):
+    N = len(W)
+    value = 0
+    for i in range(N // 2):
+        value += W[i] * W[N - i - 1]
+    return value
+
+tool = MathTools()
